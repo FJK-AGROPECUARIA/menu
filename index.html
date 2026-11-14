@@ -51,13 +51,13 @@ body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--body);font-
 <script>
 const SEM=['Domingo','Segunda','Terça','Quarta','Quinta','Sexta','Sábado'];const d=new Date();
 document.getElementById('hoje').textContent=SEM[d.getDay()]+', '+String(d.getDate()).padStart(2,'0')+'/'+String(d.getMonth()+1).padStart(2,'0')+'/'+d.getFullYear();
-const APP_VERSAO='6';
+const APP_VERSAO='7';
 /* Atualização automática (mesma regra do Gestão de Tratos): checa versao.json e recarrega sozinho */
 async function checarVersao(){if(!navigator.onLine||location.protocol!=='https:')return;
   try{const v=String((await (await fetch('versao.json?t='+Date.now(),{cache:'no-store'})).json()).versao||'');if(!v||v===APP_VERSAO)return;
     let ja='';try{ja=sessionStorage.getItem('recarregadoPara')||''}catch(e){}const [jv,jt]=ja.split('|');if(jv===v&&Date.now()-(+jt||0)<2*60000)return;
     try{sessionStorage.setItem('recarregadoPara',v+'|'+Date.now())}catch(e){}location.reload()}catch(e){}}
-setTimeout(checarVersao,3000);setInterval(checarVersao,3*60000);
+setTimeout(checarVersao,3000);setInterval(()=>{if(document.visibilityState==='visible')checarVersao()},30000);
 document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='visible')checarVersao()});
 window.addEventListener('online',checarVersao);
 if('serviceWorker' in navigator&&location.protocol==='https:'){
