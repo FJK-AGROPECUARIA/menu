@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no,viewport-fit=cover">
 <meta name="theme-color" content="#11253d">
-<meta name="apple-mobile-web-app-title" content="FJK - Menu">
+<meta name="apple-mobile-web-app-title" content="FJK">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
 <link rel="manifest" href="manifest.json">
@@ -40,12 +40,13 @@ body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--body);font-
 </header>
 <main class="wrap">
   <nav class="tiles">
-    <a href="https://fjk-agropecuaria.github.io/confinamento/" style="--c:#2f6b2c"><span class="gIc">🚜</span><span>Gestão de Tratos</span></a>
-    <a href="https://fjk-agropecuaria.github.io/arrendamentos/" style="--c:#6d4321"><span class="gIc">🐂</span><span>Gestão de Arrendamentos</span></a>
-    <a href="https://fjk-agropecuaria.github.io/abastecimentos/" style="--c:#19698a"><span class="gIc">⛽</span><span>Abastecimentos</span></a>
-    <a href="https://fjk-agropecuaria.github.io/localizador/" style="--c:#5f6b73"><span class="gIc">📍</span><span>Localizar Animais</span></a>
+    <a href="/confinamento/?menu=1" style="--c:#2f6b2c"><span class="gIc">🚜</span><span>Gestão de Tratos</span></a>
+    <a href="/arrendamentos/?menu=1" style="--c:#6d4321"><span class="gIc">🐂</span><span>Gestão de Arrendamentos</span></a>
+    <a href="/abastecimentos/?menu=1" style="--c:#19698a"><span class="gIc">⛽</span><span>Abastecimentos</span></a>
+    <a href="/localizador/?menu=1" style="--c:#5f6b73"><span class="gIc">📍</span><span>Localizar Animais</span></a>
+    <a href="/piscicultura/?menu=1" style="--c:#2a5aa8"><span class="gIc">🐟</span><span>Piscicultura</span></a>
   </nav>
-  <p class="nota">Toque num sistema para abrir. Cada um continua separado, com o seu acesso.</p>
+  <p class="nota">Toque num sistema para abrir. Para voltar ao menu, use o 🏠 no topo do sistema.</p>
 </main>
 <script>
 const SEM=['Domingo','Segunda','Terça','Quarta','Quinta','Sexta','Sábado'];const d=new Date();
